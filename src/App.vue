@@ -5,21 +5,19 @@ import TheWelcome from './components/TheWelcome.vue'
 
 import { initVelt } from '@veltdev/client'
 
-let veltClient;
+let client;
 
 const initializeVelt = async () => {
   // Initialize the Velt client with your API key
-  veltClient = await initVelt("hny91vx3KUxEIp61jBd1");
-  setDocumentId();
-  identifyUser();
+  client = await initVelt("hny91vx3KUxEIp61jBd1");
 }
 
 /**
  * To set the document ID for the Velt client
  */
 const setDocumentId = () => {
-  if (veltClient) {
-    veltClient.setDocumentId("pendo-velt-integration-customization");
+  if (client) {
+    client.setDocumentId("pendo-velt-integration-customization");
   }
 }
 
@@ -27,20 +25,22 @@ const setDocumentId = () => {
  * To identify the user for the Velt client
  */
 const identifyUser = () => {
-  if (veltClient) {
+  if (client) {
     // Replace the user object with your user data
     const user = {
       userId: "1",
       email: "test@velt.dev",
       name: "Test User"
     };
-    veltClient.identify(user);
+    client.identify(user);
   }
 }
 
-onMounted(() => {
+onMounted(async () => {
   // Call the initializeVelt function when the component is mounted
-  initializeVelt();
+  await initializeVelt();
+  setDocumentId();
+  identifyUser();
 });
 </script>
 
@@ -58,7 +58,7 @@ onMounted(() => {
   </header>
   
   <main>
-    <velt-comments priority="true"></velt-comments>
+    <velt-comments></velt-comments>
     <TheWelcome />
   </main>
 
@@ -67,9 +67,28 @@ onMounted(() => {
     <!-- Updated the order of components -->
     <velt-comment-dialog-wireframe>
       <div class="comment-dialog-container">
-          <velt-comment-dialog-composer-wireframe></velt-comment-dialog-composer-wireframe>
-          <velt-comment-dialog-header-wireframe></velt-comment-dialog-header-wireframe>
+          <velt-comment-dialog-ghost-banner-wireframe></velt-comment-dialog-ghost-banner-wireframe>
+          <velt-comment-dialog-private-banner-wireframe></velt-comment-dialog-private-banner-wireframe>
+          <velt-comment-dialog-assignee-banner-wireframe></velt-comment-dialog-assignee-banner-wireframe>
+          <velt-comment-dialog-private-badge-wireframe></velt-comment-dialog-private-badge-wireframe>
+
+          <velt-comment-dialog-header-wireframe>
+            <div class="comment-dialog-header-container">
+              <span class="custom-tag">#Custom Tag</span>
+              <div class="flex-fill"></div>
+              <velt-comment-dialog-options-wireframe></velt-comment-dialog-options-wireframe>
+              <velt-comment-dialog-copy-link-wireframe></velt-comment-dialog-copy-link-wireframe>
+              <velt-comment-dialog-resolve-button-wireframe></velt-comment-dialog-resolve-button-wireframe>
+            </div>
+          </velt-comment-dialog-header-wireframe>
           <velt-comment-dialog-body-wireframe></velt-comment-dialog-body-wireframe>
+          <velt-comment-dialog-composer-wireframe></velt-comment-dialog-composer-wireframe>
+
+          <velt-comment-dialog-all-comment-wireframe></velt-comment-dialog-all-comment-wireframe>
+          <velt-comment-dialog-approve-wireframe></velt-comment-dialog-approve-wireframe>
+          <velt-comment-dialog-sign-in-wireframe></velt-comment-dialog-sign-in-wireframe>
+          <velt-comment-dialog-upgrade-wireframe></velt-comment-dialog-upgrade-wireframe>
+          <velt-comment-dialog-suggestion-action-wireframe></velt-comment-dialog-suggestion-action-wireframe>
       </div>
     </velt-comment-dialog-wireframe>
 
@@ -148,6 +167,26 @@ velt-wireframe {
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+.comment-dialog-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.flex-fill {
+    flex: 1;
+}
+
+.custom-tag {
+    background: #F64C75;
+    padding: 6px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
 }
 
 .modal-div {
