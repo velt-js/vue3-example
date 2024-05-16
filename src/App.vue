@@ -64,6 +64,7 @@ onMounted(() => {
 
   <!-- Velt feature customization -->
   <velt-wireframe>
+    <!-- Updated the order of components -->
     <velt-comment-dialog-wireframe>
       <div class="comment-dialog-container">
           <velt-comment-dialog-composer-wireframe></velt-comment-dialog-composer-wireframe>
@@ -72,6 +73,7 @@ onMounted(() => {
       </div>
     </velt-comment-dialog-wireframe>
 
+    <!-- Replaced Comment Tool with custom tool -->
     <velt-comment-tool-wireframe>
       <div class="comment-tool">
         <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 1024 1024" class="icon" version="1.1">
@@ -80,6 +82,7 @@ onMounted(() => {
       </div>
     </velt-comment-tool-wireframe>
 
+    <!-- Replaced Comment Pin with custom pin -->
     <velt-comment-pin-wireframe>
       <div class="comment-pin">
         <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 64 64" fill="none">
