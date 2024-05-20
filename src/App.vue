@@ -36,11 +36,19 @@ const identifyUser = () => {
   }
 }
 
+const handleSidebarCommentClick = () => {
+  const veltCommentsSidebar = document.querySelector('velt-comments-sidebar');
+  veltCommentsSidebar?.addEventListener('onCommentClick', (event) => {
+    console.log('onCommentClick:', event.detail);
+  });
+}
+
 onMounted(async () => {
   // Call the initializeVelt function when the component is mounted
   await initializeVelt();
   setDocumentId();
   identifyUser();
+  handleSidebarCommentClick();
 });
 </script>
 
@@ -53,12 +61,14 @@ onMounted(async () => {
       <div class="actions-container">
         <!-- Velt comment tool to add pin comments -->
         <velt-comment-tool></velt-comment-tool>
+        <velt-sidebar-button></velt-sidebar-button>
       </div>
     </div>
   </header>
   
   <main>
     <velt-comments></velt-comments>
+    <velt-comments-sidebar shadow-dom="false"></velt-comments-sidebar>
     <TheWelcome />
   </main>
 
@@ -110,6 +120,15 @@ onMounted(async () => {
         </svg>
       </div>
     </velt-comment-pin-wireframe>
+
+    <velt-sidebar-button-wireframe>
+      <div class="comment-sidebar-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M5.497 3.017A2.5 2.5 0 0 0 3 5.517V18.5A2.5 2.5 0 0 0 5.5 21h13a2.5 2.5 0 0 0 2.5-2.5V5.503a2.5 2.5 0 0 0-2.503-2.5l-13 .014zM5 18.5V5.517a.5.5 0 0 1 .5-.5l8.5-.014V19H5.5a.5.5 0 0 1-.5-.5z" fill="#F74A82"/>
+        </svg>
+        <velt-sidebar-button-comments-count-wireframe></velt-sidebar-button-comments-count-wireframe>
+      </div>
+    </velt-sidebar-button-wireframe>
   </velt-wireframe>
 </template>
 
@@ -126,6 +145,9 @@ header {
 .actions-container {
     margin: 16px 0;
     min-height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 @media (min-width: 1024px) {
@@ -160,6 +182,18 @@ velt-wireframe {
 }
 
 .comment-tool, .comment-pin {
+  cursor: pointer;
+}
+
+.comment-sidebar-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #F64C75;
+  border-radius: 4px;
+  color: #F64C75;
+  padding: 4px;
+  box-sizing: border-box;
   cursor: pointer;
 }
 
