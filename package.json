@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@veltdev/client": "^1.0.103",
+    "@veltdev/client": "^1.0.127",
     "vue": "^3.4.21"
   },
   "devDependencies": {

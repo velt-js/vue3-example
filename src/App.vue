@@ -30,7 +30,8 @@ const identifyUser = () => {
     const user = {
       userId: "1",
       email: "test@velt.dev",
-      name: "Test User"
+      name: "Test User",
+      color: "#8b4bef",
     };
     client.identify(user);
   }
@@ -67,7 +68,7 @@ onMounted(async () => {
   </header>
   
   <main>
-    <velt-comments></velt-comments>
+    <velt-comments resolved-comments-on-dom="true"></velt-comments>
     <velt-comments-sidebar shadow-dom="false"></velt-comments-sidebar>
     <TheWelcome />
   </main>
