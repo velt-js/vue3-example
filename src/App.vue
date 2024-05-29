@@ -220,7 +220,9 @@ onMounted(async () => {
 					</velt-comment-dialog-thread-card-wireframe>
 					<velt-comment-dialog-more-reply-wireframe></velt-comment-dialog-more-reply-wireframe>
 				</velt-comment-dialog-threads-wireframe>
-				<velt-comment-dialog-toggle-reply-wireframe></velt-comment-dialog-toggle-reply-wireframe>
+				<div class="toggle-reply">
+					<velt-comment-dialog-toggle-reply-wireframe></velt-comment-dialog-toggle-reply-wireframe>
+				</div>
 			</velt-comment-dialog-body-wireframe>
 			<!-- Composer -->
 			<velt-comment-dialog-composer-wireframe>
@@ -447,6 +449,10 @@ h3 {
 
 .marked-as-resolved {
 	display: none;
+}
+
+.toggle-reply {
+	margin-top: 8px;
 }
 </style>
 
