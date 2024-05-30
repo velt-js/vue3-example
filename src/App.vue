@@ -210,7 +210,12 @@ onMounted(async () => {
 										<p class="option-item">Edit</p>
 									</velt-comment-dialog-options-dropdown-content-edit-wireframe>
 									<velt-comment-dialog-options-dropdown-content-delete-wireframe>
-										<p class="option-item">Delete</p>
+										<velt-comment-dialog-options-dropdown-content-delete-comment-wireframe>
+											<p class="option-item">Delete</p>
+										</velt-comment-dialog-options-dropdown-content-delete-comment-wireframe>
+										<velt-comment-dialog-options-dropdown-content-delete-thread-wireframe>
+											<p class="option-item">Delete</p>
+										</velt-comment-dialog-options-dropdown-content-delete-thread-wireframe>
 									</velt-comment-dialog-options-dropdown-content-delete-wireframe>
 								</velt-comment-dialog-options-dropdown-content-wireframe>
 							</velt-comment-dialog-thread-card-options-wireframe>
@@ -587,4 +592,10 @@ velt-comment-tool {
 		display: none;
 	}
 }
+
+.velt-comment-dialog-options-dropdown {
+	height: 24px !important;
+	width: 24px !important;
+}
+
 </style>
