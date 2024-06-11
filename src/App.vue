@@ -1,7 +1,5 @@
 <script setup>
 import { onMounted } from 'vue';
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 
 import { initVelt } from '@veltdev/client'
 
@@ -9,7 +7,7 @@ let client;
 
 const initializeVelt = async () => {
 	// Initialize the Velt client with your API key
-	client = await initVelt("hny91vx3KUxEIp61jBd1");
+	client = await initVelt("oGbYp7xKvkPGcawWbGKJ");
 }
 
 /**
@@ -160,9 +158,6 @@ onMounted(async () => {
 				</svg>
 			</div>
 		</velt-comment-tool-wireframe>
-		<velt-comment-status type="resolved">
-
-		</velt-comment-status>
 		<velt-comment-bubble-wireframe>
 			<div class="custom-bubble-tool">
 				<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
