@@ -7,7 +7,7 @@ let client;
 
 const initializeVelt = async () => {
 	// Initialize the Velt client with your API key
-	client = await initVelt("oGbYp7xKvkPGcawWbGKJ");
+	client = await initVelt("j3AwoBkuQMTEgeqrmPve");
 }
 
 /**
