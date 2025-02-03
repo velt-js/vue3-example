@@ -1,4 +1,4 @@
-# pendo-velt-integration-customization
+# Vue 3 Example
 
 This template should help get you started developing with Vue 3 in Vite.
 
