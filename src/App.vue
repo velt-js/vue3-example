@@ -30,6 +30,7 @@ const identifyUser = () => {
 			email: "test@velt.dev",
 			name: "Test User",
 			color: "#8b4bef",
+			organizationId: "testOrg1"
 		};
 		client.identify(user);
 	}
